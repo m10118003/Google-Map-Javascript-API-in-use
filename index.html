@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyline</title>
+    <!-- AOS animate effect kit. -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Make the CSS style pull in here. -->
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+    <!-- 交通資訊 -->
+    <section>
+        <div class="map-box">
+            <div class="map-container">
+                <div class="map-row row">
+                    <div data-aos="fade-in" data-aos-offset="120" data-aos-delay="400" data-aos-duration="800"
+                        class="map-left d-flex align-items-center justify-content-center">
+                        <h1>Polyline & Markers</h1>
+                    </div>
+                    <div data-aos="fade-in" data-aos-offset="120" data-aos-delay="400" data-aos-duration="1200"
+                        class="map-right">
+                        <div class="map-right-text">
+                            <h5>Path</h5>
+                            <h5>Points</h5>
+                        </div>
+                    </div>
+                </div>
+                <div id="map">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // This example creates an interactive map which constructs a polyline based on
+        // user clicks. Note that the polyline only appears once its path property
+        // contains ten LatLng coordinates.        
+        let map;
+        let markers = [];
+        let position = [
+            { label: 'A', lat: 24.248600, lng: 120.709251 },
+            { label: 'B', lat: 24.248800, lng: 120.709251 },
+            { label: 'C', lat: 24.249000, lng: 120.709251 },
+            { label: 'D', lat: 24.249400, lng: 120.709251 },
+            { label: 'E', lat: 24.249600, lng: 120.709251 },
+            { label: 'F', lat: 24.249200, lng: 120.709451 },
+            { label: 'G', lat: 24.249200, lng: 120.709651 },
+            { label: 'H', lat: 24.249200, lng: 120.709851 },
+            { label: 'I', lat: 24.249800, lng: 120.709251 },
+            { label: 'J', lat: 24.250000, lng: 120.709251 }
+        ];
+        // Set the ten path with info.
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 18,
+                center: {
+                    lat: 24.248600,
+                    lng: 120.709251
+                }
+            });
+
+            for (var i = 0; i < position.length; i++) {
+                addMarker(i);
+                // Add the info.
+                const polylinePath = new google.maps.Polyline({
+                    path: position,
+                    geodesic: true,
+                    strokeColor: '#008800',
+                    strokeOpacity: 0.1,
+                    strokeWeight: 10,
+                    editable: true,
+                    geodesic: false,
+                    draggable: false
+                });
+                polylinePath.setMap(map);
+            }
+            // Add the path color and lock the position.
+        }
+
+        function addMarker(e) {
+            markers[e] = new google.maps.Marker({
+                position: {
+                    lat: position[e].lat,
+                    lng: position[e].lng
+                },
+                map: map,
+                label: position[e].label
+            });
+        }
+        // Add markers to path.
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key="Your_Key_in_here"&callback=initMap"
+        async defer></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</html>

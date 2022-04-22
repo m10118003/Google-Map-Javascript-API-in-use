@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;  
+  }
+  html,
+  body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  }
+
+  
+// Traffic information
+.map-box {    
+    overflow: hidden !important;
+    .map-container {             
+        width: 80%;
+        height: 1200px;
+        background-color: sandybrown;
+        border-radius: 5px;
+        margin-left: 31vmin;
+        margin-bottom: 2vmin;
+        
+        .map-row {
+          .map-left {            
+            margin-left: 7vmin;
+          
+            h1 {
+              font-size: 3rem;
+              font-weight: bolder;
+              padding-top: 1em;
+            }
+        }
+        
+        .map-right {
+          // width: 620px;
+          // height: 150px;
+          background: sandybrown;
+          border-radius: 5px;
+          margin: auto;
+        }
+        
+        .map-right-text {
+          // width: 560px;
+          margin: 30px;
+          
+          h5 {
+            // font-size: 1rem;
+            letter-spacing: 8px;
+          }
+  
+        }
+      }
+        // Traffic information Map position
+        #map {
+            height: 100%;
+            width: 1125px;
+            margin-left: 9vmin;
+        }  
+    
+    }
+  }
+  @media screen and (max-width: 1800px) {
+    .map-container {
+      margin-left: 20vmin !important;  
+    }
+  
+  }
+  @media screen and (max-width: 1580px) {
+    .map-container {
+      margin-left: 5vmin !important;
+      .map-right  {
+        margin-top: 5vmin !important;
+     }  
+    }
+    .map_rwd {
+      width: 80% !important;      
+    }
+  }
+  @media screen and (max-width: 1380px) {
+    .map-container {    
+      margin-left: 5vmin !important;
+    }
+  }
+  @media screen and (max-width: 1343px) {
+    .map-container {        
+      margin-left: 5vmin !important;
+      .map-right {
+        margin-top: 5vmin !important;
+        margin-left: -4vmin !important;
+    }
+  }
+  }
+  @media screen and (max-width: 1290px) {
+    .map-row {
+      .map-right {
+        margin-top: -2vmin !important;      
+        margin-left: 0vmin !important;
+      
+        .map-right-text {
+          h5 {
+            font-size: 1rem !important;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+    .map_rwd {
+      width: 80% !important;      
+    }
+  }
+  
+  @media screen and (max-width: 1210px){
+    .map-row {
+      .map-right {
+        margin-left: 4vmin !important;
+      
+        .map-right-text {
+          h5 {
+            font-size: 0.8rem !important;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+    .map_rwd {
+      width: 75% !important;      
+    }
+  }
+  @media screen and (max-width: 1080px){
+    .map-row {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      flex-direction: column;    
+      .map-right {
+        margin-top: -10vmin !important;
+        margin-left: 11vmin !important;
+      
+        .map-right-text {
+          h5 {
+            font-size: 0.6rem !important;
+            letter-spacing: 0px;
+          }
+        }
+      }
+    }
+    .map { 
+      margin-top: 2vmin;     
+    .map_rwd {
+      width: 70% !important;
+    }
+    }
+  }
+  @media screen and (max-width: 860px){
+    .map-container {
+      width: 90% !important;  
+      .map {     
+        .map_rwd {
+          width: 92% !important;
+        }
+      }
+    }  
+  }
+  @media screen and (max-width: 540px){
+    .map-container {
+      width: 90% !important;  
+      .map-left {     
+        margin-left: -9vmin !important;    
+      }
+      .map {     
+        .map_rwd {
+          width: 87% !important;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 480px){
+    .map-container {
+      width: 90% !important; 
+      margin-bottom: -40vmin !important; 
+      .map-left {     
+          margin-left: -12vmin !important;
+          h1 {
+            margin-top: 5vmin;
+          }    
+      }
+      .map {     
+        .map_rwd {
+          width: 90% !important;
+        }
+      }
+    }
+  }
